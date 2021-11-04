@@ -1,4 +1,4 @@
-# tanjun
+# Tanjun
 
 簡単なReact NativeのUI
 

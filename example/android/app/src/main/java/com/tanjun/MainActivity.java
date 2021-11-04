@@ -1,4 +1,4 @@
-package com.example.tanjun;
+package com.tanjun;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "TanjunExample";
+    return "Tanjun";
   }
 }
