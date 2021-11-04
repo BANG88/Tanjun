@@ -1,21 +1,24 @@
 # Tanjun
 
-簡単なReact NativeのUI
+簡単な React Native の UI
 
 ## Installation
 
 ```sh
-npm install tanjun
+yarn add tanjun
 ```
 
 ## Usage
 
-```js
-import { multiply } from "tanjun";
+```jsx
+import { View, Text } from 'tanjun';
 
-// ...
-
-const result = await multiply(3, 7);
+// ... style will auto scale for your device correctly
+const App = () => (
+  <View style={{ width: 200, height: 140 }}>
+    <Text style={{ fontSize: 46 }}>Hello Tanjun </Text>
+  </View>
+);
 ```
 
 ## Contributing
