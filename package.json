@@ -50,6 +50,8 @@
     "@commitlint/config-conventional": "^14.1.0",
     "@react-native-community/eslint-config": "^3.0.1",
     "@release-it/conventional-changelog": "^3.3.0",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/react-native": "^8.0.0",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
     "@types/react-native": "0.66.2",
@@ -73,6 +75,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
