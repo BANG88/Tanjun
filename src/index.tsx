@@ -1,1 +1,1 @@
-export * from './style'
+export * from './provider'
