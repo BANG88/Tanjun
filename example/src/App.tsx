@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet } from 'react-native'
 import { Text, useTanjun, View } from 'tanjun'
-
+// https://www.figma.com/file/r1lm0ynIE3ivIYyHgjT7Zj/Untitled-(1)-(Copy)?node-id=0%3A1
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>()
   const { width } = useTanjun()
