@@ -29,15 +29,15 @@ type TanjunValue = {
   /**
    * Provide your own custom Text component, defaults to `Text` from 'react-native'
    */
-  text?: <T>(props: T) => React.ReactNode
+  text?: <T>(props: T) => React.ReactElement
   /**
    * Provide your own custom View component, defaults to `View` from 'react-native'
    */
-  view?: <T>(props: T) => React.ReactNode
+  view?: <T>(props: T) => React.ReactElement
   /**
    * Provide your own custom Image component, defaults to `Image` from 'react-native'
    */
-  image?: <T>(props: T) => React.ReactNode
+  image?: <T>(props: T) => React.ReactElement
 }
 
 /**
