@@ -2,7 +2,7 @@ import React from 'react'
 import { View as RNView } from 'react-native'
 import { useTanjun, useTanjunStyle } from './provider'
 
-export const View: React.FC<Tanjun.ImageProps> = ({ style, ...props }) => {
+export const View: React.FC<Tanjun.ViewProps> = ({ style, ...props }) => {
   const s = useTanjunStyle(style)
 
 

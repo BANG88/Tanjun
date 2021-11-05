@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Image correctly 1`] = `
+<Image
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2392&q=80",
+    }
+  }
+  style={
+    Object {
+      "height": 209,
+      "width": 209,
+    }
+  }
+>
+  Tanjun
+</Image>
+`;
+
+exports[`renders Text correctly 1`] = `
+<Text
+  style={
+    Object {
+      "fontSize": 28,
+      "marginTop": 42,
+    }
+  }
+>
+  Tanjun Text
+</Text>
+`;
+
+exports[`renders View correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 139,
+      "padding": 42,
+      "width": 209,
+    }
+  }
+>
+  <Text>
+    Tanjun View
+  </Text>
+</View>
+`;
