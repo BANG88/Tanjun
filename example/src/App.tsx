@@ -1,6 +1,5 @@
 import * as React from 'react'
-
-import { StyleSheet, } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Text, useTanjun, View } from 'tanjun'
 
 export default function App() {
@@ -13,8 +12,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.box}/>
-      <Text>Result: {result}</Text>
+      <View style={styles.box} debug />
+      <Text
+        style={{
+          marginTop: 40,
+        }}
+        debug>
+        Result: {result}
+      </Text>
     </View>
   )
 }
@@ -24,12 +29,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'#fff'
+    backgroundColor: '#fff',
   },
   box: {
     width: 260,
     height: 260,
     marginVertical: 20,
-    backgroundColor:'green'
+    backgroundColor: '#ddd',
   },
 })

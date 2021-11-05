@@ -1,9 +1,45 @@
-import type { ViewProps as RNViewProps,TextProps as RNTextProps,ImageProps as RNImageProps } from 'react-native';
+import type {
+  ImageProps as RNImageProps,
+  TextProps as RNTextProps,
+  ViewProps as RNViewProps,
+} from 'react-native'
 
 declare global {
-  namespace Tanjun{
-    interface ViewProps extends RNViewProps{}
-    interface ImageProps extends RNImageProps{}
-    interface TextProps extends RNTextProps{}
+  namespace Tanjun {
+    interface ViewProps extends RNViewProps {
+      /**
+       * __DEV__ mode only
+       */
+      debug?: boolean
+    }
+    interface ImageProps extends RNImageProps {
+      /**
+       * __DEV__ mode only
+       */
+      debug?: boolean
+    }
+    interface TextProps extends RNTextProps {
+      /**
+       * __DEV__ mode only
+       */
+      debug?: boolean
+    }
   }
+}
+
+export type TanjunValue = {
+  width: number
+  height: number
+  /**
+   * Provide your own custom Text component, defaults to `Text` from 'react-native'
+   */
+  text?: <T>(props: T) => React.ReactElement
+  /**
+   * Provide your own custom View component, defaults to `View` from 'react-native'
+   */
+  view?: <T>(props: T) => React.ReactElement
+  /**
+   * Provide your own custom Image component, defaults to `Image` from 'react-native'
+   */
+  image?: <T>(props: T) => React.ReactElement
 }

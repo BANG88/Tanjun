@@ -13,6 +13,7 @@ import {
   TextStyle,
   ViewStyle,
 } from 'react-native'
+import type { TanjunValue } from './types'
 
 // generate a hash from style object
 var ohash = require('object-hash')
@@ -23,23 +24,6 @@ const TanjunContext = React.createContext<TanjunValue>({
   height: 1920,
 })
 
-type TanjunValue = {
-  width: number
-  height: number
-  /**
-   * Provide your own custom Text component, defaults to `Text` from 'react-native'
-   */
-  text?: <T>(props: T) => React.ReactElement
-  /**
-   * Provide your own custom View component, defaults to `View` from 'react-native'
-   */
-  view?: <T>(props: T) => React.ReactElement
-  /**
-   * Provide your own custom Image component, defaults to `Image` from 'react-native'
-   */
-  image?: <T>(props: T) => React.ReactElement
-}
-
 /**
  * Tanjun Provider
  * @param props
@@ -48,7 +32,6 @@ type TanjunValue = {
 export const TanjunProvider = (props: React.ProviderProps<TanjunValue>) => {
   return <TanjunContext.Provider {...props} />
 }
-
 
 const records = [
   // size
@@ -89,7 +72,10 @@ const records = [
 /**
  * Create an unqiue props with the given records
  */
-const props = new Set(records)
+export const tanjunProps = new Set(records)
+
+// Prop name
+export  type TanjunPropName = typeof records[number]
 
 // Get Tanjun configurations mostly you will never need to use this
 export const useTanjun = () => React.useContext(TanjunContext)
@@ -100,8 +86,6 @@ const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
 // Get the ratio of the device
 const onePixel = 1 / PixelRatio.get()
 
-// Prop name
-type PropName = typeof records[number]
 
 // Cache single prop-value
 const styleCache: any = {}
@@ -116,7 +100,7 @@ const hashCache: any = {}
  */
 export function useTanjunStyle<
   T extends StyleProp<ViewStyle | TextStyle | ImageStyle>,
->(style: T, debug = false) {
+>(style: T) {
   // If style is not a style prop, return it directly
   if (!style) {
     return style
@@ -140,7 +124,7 @@ export function useTanjunStyle<
     const styles: any = { ...StyleSheet.flatten(style) }
 
     for (const key in styles) {
-      if (props.has(key as PropName)) {
+      if (tanjunProps.has(key as TanjunPropName)) {
         let value: any = styles[key]
 
         const isInvalidValue =
@@ -169,10 +153,6 @@ export function useTanjunStyle<
           }
         }
 
-        // Debug
-        if (__DEV__ && debug) {
-          console.log(`key: ${key} => Tanjun: ${styles[key]} device: ${value}`)
-        }
         // Set the value
         styles[key] = value
         // Cache the key-value pair
