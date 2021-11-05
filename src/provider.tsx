@@ -91,7 +91,7 @@ const records = [
  */
 const props = new Set(records)
 
-// Get Tanjun size
+// Get Tanjun configurations mostly you will never need to use this
 export const useTanjun = () => React.useContext(TanjunContext)
 
 // Get window's width & height

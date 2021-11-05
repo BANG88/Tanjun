@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { StyleSheet, View, Text } from 'react-native'
-import { useTanjun } from 'tanjun'
+import { StyleSheet, } from 'react-native'
+import { Text, useTanjun, View } from 'tanjun'
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>()
@@ -13,6 +13,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.box}/>
       <Text>Result: {result}</Text>
     </View>
   )
@@ -23,10 +24,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#fff'
   },
   box: {
-    width: 60,
-    height: 60,
+    width: 260,
+    height: 260,
     marginVertical: 20,
+    backgroundColor:'green'
   },
 })
