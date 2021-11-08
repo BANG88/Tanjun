@@ -6,6 +6,7 @@ import { useTanjunExampleTheme } from './Theme'
 // Design file: https://www.figma.com/file/r1lm0ynIE3ivIYyHgjT7Zj/Untitled-(1)-(Copy)?node-id=0%3A1
 export default function App() {
   const { primaryColor } = useTanjunExampleTheme()
+  // How to use : useTanjunStyle hook for other component
   const containerStyle = useTanjunStyle({
     paddingHorizontal: 28,
   })
@@ -35,6 +36,13 @@ export default function App() {
             }}
           />
         </View>
+        <View
+          style={{
+            width: 299,
+            height: 40,
+            backgroundColor: '#C4C4C4',
+            borderRadius: 12,
+          }}></View>
       </ScrollView>
     </SafeAreaView>
   )
