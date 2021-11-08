@@ -18,19 +18,28 @@ import type { TanjunValue } from './types'
 // generate a hash from style object
 var ohash = require('object-hash')
 
-// Ref: https://www.browserstack.com/guide/ideal-screen-sizes-for-responsive-design
-const TanjunContext = React.createContext<TanjunValue>({
+const defaultTanjunValue = {
   width: 1080,
   height: 1920,
-})
+}
+// Ref: https://www.browserstack.com/guide/ideal-screen-sizes-for-responsive-design
+const TanjunContext = React.createContext<TanjunValue>(defaultTanjunValue)
 
 /**
  * Tanjun Provider
  * @param props
  * @returns
  */
-export const TanjunProvider = (props: React.ProviderProps<TanjunValue>) => {
-  return <TanjunContext.Provider {...props} />
+export const TanjunProvider = ({
+  value,
+  children,
+}: Partial<React.ProviderProps<TanjunValue>>) => {
+  return (
+    <TanjunContext.Provider
+      value={{ ...defaultTanjunValue, ...value }}
+      children={children}
+    />
+  )
 }
 
 const records = [
@@ -75,7 +84,7 @@ const records = [
 export const tanjunProps = new Set(records)
 
 // Prop name
-export  type TanjunPropName = typeof records[number]
+export type TanjunPropName = typeof records[number]
 
 // Get Tanjun configurations mostly you will never need to use this
 export const useTanjun = () => React.useContext(TanjunContext)
@@ -85,7 +94,6 @@ const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
 
 // Get the ratio of the device
 const onePixel = 1 / PixelRatio.get()
-
 
 // Cache single prop-value
 const styleCache: any = {}

@@ -7,8 +7,8 @@ interface TanjunExampleThemeContextValue {
 }
 
 const defaultThemeValue = {
-  primaryColor: '#f50057',
-  secondaryColor: '#3fd322',
+  primaryColor: '#0FA956',
+  secondaryColor: '#f50057',
   textColor: '#2b2b2b',
 }
 const TanjunExampleThemeContext =
