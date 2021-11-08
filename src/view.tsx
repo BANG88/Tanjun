@@ -1,7 +1,6 @@
 import React from 'react'
-import { ScrollView, StyleSheet, View as RNView } from 'react-native'
+import { ScrollView, StyleSheet, Text, View as RNView } from 'react-native'
 import { useTanjun, useTanjunStyle } from './provider'
-import { Text } from './text'
 import { getDebugStyle } from './utils'
 
 export const View: React.FC<Tanjun.ViewProps> = ({
