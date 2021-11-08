@@ -14,11 +14,10 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.box} debug />
       <Text
-        secondary
+        primary
         style={{
           marginTop: 40,
-        }}
-        debug>
+        }}>
         Result: {result}
       </Text>
     </View>

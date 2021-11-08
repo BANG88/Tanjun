@@ -11,7 +11,17 @@ export const View: React.FC<Tanjun.ViewProps> = ({
   const s = useTanjunStyle(style)
 
   const { view } = useTanjun()
+
   if (typeof view === 'function') {
+    // Note: only use it for debug
+    if (__DEV__) {
+      if (debug) {
+        const { debugStyle, originalStyle } = getDebugStyle(style, s)
+        if (debugStyle) {
+          console.log('Tanjun view: ', originalStyle, debugStyle)
+        }
+      }
+    }
     return view({ ...props, style: s })
   }
 

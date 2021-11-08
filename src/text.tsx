@@ -10,17 +10,16 @@ export const Text: React.FC<Tanjun.TextProps> = ({
 }) => {
   const s = useTanjunStyle(style)
 
-  const { text } = useTanjun()
-  if (typeof text === 'function') {
-    return text({ ...props, style: s })
-  }
-
   // Note: only use it for debug
   if (__DEV__) {
     if (debug) {
       const { debugStyle, originalStyle } = getDebugStyle(style, s)
       console.log('Tanjun text: ', originalStyle, debugStyle)
     }
+  }
+  const { text } = useTanjun()
+  if (typeof text === 'function') {
+    return text({ ...props, style: s })
   }
 
   return <RNText {...props} style={s} />

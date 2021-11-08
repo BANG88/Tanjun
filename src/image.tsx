@@ -10,11 +10,6 @@ export const Image: React.FC<Tanjun.ImageProps> = ({
 }) => {
   const s = useTanjunStyle(style)
 
-  const { image } = useTanjun()
-  if (typeof image === 'function') {
-    return image({ ...props, style: s })
-  }
-
   // Note: only use it for debug
   if (__DEV__) {
     if (debug) {
@@ -22,5 +17,10 @@ export const Image: React.FC<Tanjun.ImageProps> = ({
       console.log('Tanjun image: ', originalStyle, debugStyle)
     }
   }
+  const { image } = useTanjun()
+  if (typeof image === 'function') {
+    return image({ ...props, style: s })
+  }
+
   return <RNImage {...props} style={s} />
 }
