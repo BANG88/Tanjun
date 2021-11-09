@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://ant.design">
-    <img width="300" src="https://user-images.githubusercontent.com/433259/140850019-478941cc-7372-4a73-b194-4640f2d1ded2.png">
+    <img width="200" src="https://user-images.githubusercontent.com/433259/140850019-478941cc-7372-4a73-b194-4640f2d1ded2.png">
   </a>
 </p>
 
@@ -34,6 +34,10 @@ const App = () => (
   </TanjunProvider>
 )
 ```
+
+## Advanced Usage
+
+You can provide your own `Image` `Text` `View` implementations. Please move to [`example/src/App.tsx`](example/src/App.tsx) for more details.
 
 ## License
 
