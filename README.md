@@ -37,7 +37,7 @@ const App = () => (
 
 ## Advanced Usage
 
-You can provide your own `Image` `Text` `View` implementations. Please move to [`example/src/App.tsx`](example/src/App.tsx) for more details.
+You can provide your own `Image` `Text` `View` implementations. Please move to [`example/src/my-own-proivder.tsx`](example/src/my-own-proivder.tsx) for more details.
 
 ## License
 
