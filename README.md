@@ -1,10 +1,13 @@
+<p align="center">
+  <a href="https://ant.design">
+    <img width="300" src="https://user-images.githubusercontent.com/433259/140850019-478941cc-7372-4a73-b194-4640f2d1ded2.png">
+  </a>
+</p>
+
 # Tanjun
 
-簡単な React Native の UI
-
-> Write React Native style in an easy way and restore the original design one to one.
->
-> Get size from designer and use it in your app.
+> Write React Native style in an easy way and restore the original design one to one. Get size from designer and use it in your app.
+> **Happy coding!**
 
 ## Installation
 
