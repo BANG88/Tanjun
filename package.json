@@ -1,6 +1,6 @@
 {
   "name": "tanjun",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "簡単なReact NativeのUI",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
