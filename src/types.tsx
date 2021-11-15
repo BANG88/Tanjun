@@ -1,5 +1,6 @@
 import type {
   ImageProps as RNImageProps,
+  ScrollViewProps as RNScrollViewProps,
   TextProps as RNTextProps,
   ViewProps as RNViewProps,
 } from 'react-native'
@@ -24,6 +25,12 @@ declare global {
        */
       debug?: boolean
     }
+    interface ScrollViewProps extends RNScrollViewProps {
+      /**
+       * __DEV__ mode only
+       */
+      debug?: boolean
+    }
   }
 }
 
@@ -42,4 +49,8 @@ export type TanjunValue = {
    * Provide your own custom Image component, defaults to `Image` from 'react-native'
    */
   image?: <T>(props: T) => React.ReactElement
+  /**
+   * Provide your own custom ScrollView component, defaults to `ScrollView` from 'react-native'
+   */
+  scrollView?: <T>(props: T) => React.ReactElement
 }
